@@ -1,0 +1,23 @@
+﻿@model Labs.ModelView.CustomerViewModel
+@using Labs.Models;
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*displays a customer list using a partial view*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CustomerList</title>
+</head>
+<body>
+    <div>
+        <br />
+        <br />
+        @Html.Partial("DisplayCustomers", Model)
+    </div>
+</body>
+</html>

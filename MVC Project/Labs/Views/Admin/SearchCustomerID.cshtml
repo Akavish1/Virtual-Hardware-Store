@@ -1,0 +1,31 @@
+﻿@model Labs.ModelView.CustomerViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*displays the customers with the id numbers matching (or partially matching) the input numbers using a partial view*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Customer by ID</title>
+</head>
+<body>
+    <div>
+        <br />
+        <br />
+        <form action="SearchCustomerID" method="post">
+            Search by ID <input id="Text1" name="txtcustomernumber" type="text" />
+            <br />
+            <input id="Submit1" type="submit" value="Search customers by ID" />
+        </form>
+    </div>
+    <br />
+    @*Use partial view to avoid pointless code*@
+    @Html.Partial("DisplayCustomers", Model)
+
+</body>
+
+</html>

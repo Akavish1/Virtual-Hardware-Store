@@ -1,0 +1,26 @@
+﻿@if (Session["Logged"] != null)
+{
+    if (Session["Logged"].ToString().Equals("Admin"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    if (Session["Logged"].ToString().Equals("Customer"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+}
+
+@*displays random contact text*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contact</title>
+</head>
+<body>
+    <div>
+        Contact the admininstrator (!!) through email - orha5@ac.sce.ac.il
+    </div>
+</body>
+</html>

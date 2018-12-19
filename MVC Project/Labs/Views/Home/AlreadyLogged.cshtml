@@ -1,0 +1,32 @@
+﻿@if (Session["Logged"] != null)
+{
+    if (Session["Logged"].ToString().Equals("Admin"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    if (Session["Logged"].ToString().Equals("Customer"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+}
+
+
+@*views a relevant text when a logged user tries to log in*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AlreadyLogged</title>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Log in failed!</strong>
+        <br />
+        You are already logged in.
+    </div>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>

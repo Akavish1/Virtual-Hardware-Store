@@ -1,0 +1,35 @@
+﻿
+
+@*shows the home page (duh)*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*LAB 1*@
+    <title>The Greatest Virtual Hardware Store On Earth</title>
+</head>
+<body>
+    <div>
+        @*LAB 1*@
+        <span style="color:peru">
+            Welcome to potentially the greatest virutal store on the planet!
+        </span>
+        <br />
+        @*LAB 3*@
+        @*@ViewData["CurrentTime"]*@
+
+        @*LAB 6*@
+        @*two ways to use tempdata and keep the values throughout multiple sessions*@
+        @*@TempData["CurrentTime"]
+        @{ TempData.Keep("CurrentTime");}*@
+        @*@{ string str = TempData.Peek("CurrentTime").ToString(); }*@
+        Already registered?
+        @Html.ActionLink("Sign in", "Signin", "Home")
+        <br />
+        New customer?
+        @Html.ActionLink("Register", "Enter", "Customer")
+        <br />
+    </div>
+</body>
+</html>

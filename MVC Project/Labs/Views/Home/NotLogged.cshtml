@@ -1,0 +1,21 @@
+﻿
+
+@*a view that notifies the user that purchasing items is available only for registered users*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NotLogged</title>
+</head>
+<body>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Must be logged in</strong>
+        <br />
+        @Html.ActionLink("Press here to be redirected to login page", "Signin", "Home")
+    </div>
+    <div>
+    </div>
+</body>
+</html>

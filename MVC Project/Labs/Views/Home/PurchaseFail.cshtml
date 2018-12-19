@@ -1,0 +1,32 @@
+﻿@if (Session["Logged"] != null)
+{
+    if (Session["Logged"].ToString().Equals("Admin"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    if (Session["Logged"].ToString().Equals("Customer"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+}
+
+
+@*notifies the user that a purchase has failed for whatever reason, and that they wont be charge so theres no reason to panic and spam customer support*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PurchaseFail</title>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Purchase Failed!</strong>
+        <br />
+        You will not be charged.
+    </div>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>

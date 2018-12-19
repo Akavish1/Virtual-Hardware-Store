@@ -1,0 +1,32 @@
+﻿@model Labs.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+@*takes the input for the addition of a new product to the database*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Product</title>
+</head>
+<body>
+    <div>
+        <br />
+        <br />
+        <span style="color:coral">New product added</span>
+        <br />
+        Product Name: @Model.ProductName
+        <br />
+        Set Product Price: @Model.Price
+        <br />
+        Quantity Available: @Model.Quantity
+        <br />
+        Product ID Number: @Model.ProductID
+        <br />
+        Product Image: <text><img src="@Model.Image" width="125px" height="100px"></img></text>
+    </div>
+</body>
+</html>

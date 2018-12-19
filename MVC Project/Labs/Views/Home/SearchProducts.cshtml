@@ -1,0 +1,33 @@
+﻿@model Labs.ModelView.ProductViewModel
+@if (Session["Logged"] != null)
+{
+    if (Session["Logged"].ToString().Equals("Admin"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    if (Session["Logged"].ToString().Equals("Customer"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+}
+
+@*displays the products with the name characters matching (or partially matching) the input characters*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Products</title>
+</head>
+<body>
+    <div>
+        <br />
+        <br />
+        <form action="SearchProducts" method="post">
+            Search by name <input id="Text1" name="txtname" type="text" />
+            <br />
+            <input id="Submit1" type="submit" value="Search Products" />
+        </form>
+    </div>
+</body>
+</html>

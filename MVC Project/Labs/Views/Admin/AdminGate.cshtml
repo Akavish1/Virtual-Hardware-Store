@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+@*the default page for a logged admin user*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminGate</title>
+</head>
+<body>
+    Hello @Session["LoggedName"]
+    <br />
+    Click on the links below to perform the wanted action
+    <div>
+        @Html.ActionLink("See existing customer list", "CustomerList", "Admin")
+        <br />
+        @Html.ActionLink("Search a customer by customer ID", "SearchID", "Admin")
+        <br />
+        @Html.ActionLink("Search a customer by name", "SearchName", "Admin")
+        <br />
+        @Html.ActionLink("Add a product to the catalog", "Enter", "Admin")
+        <br />
+    </div>
+</body>
+</html>

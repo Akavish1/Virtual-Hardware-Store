@@ -1,0 +1,30 @@
+﻿@model Labs.ModelView.CustomerViewModel
+@using Labs.Models
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*displays the customers with the name characters matching (or partially matching) the input characters using a partial view*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Customers by name</title>
+</head>
+<body>
+    <div>
+        <br />
+        <br />
+        <form action="SearchCustomers" method="post">
+            Search by first name <input id="Text1" name="txtfirstname" type="text" />
+            <br />
+            <input id="Submit1" type="submit" value="Search customers" />
+        </form>
+    </div>
+    <br />
+    @*Use partial view to avoid pointless code*@
+    @Html.Partial("DisplayCustomers", Model)
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model Labs.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*takes the input for the registration of a new product*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Product</title>
+</head>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<body>
+    Enter product's details-
+    <br />
+    @if (Session["pDuplicateError"] != null)
+    {
+        <span style="color:orangered">@Session["pDuplicateError"];</span>
+    }
+    <div>
+        <br />
+        <br />
+        @using (Html.BeginForm("Submit", "Admin", FormMethod.Post))
+        {
+            <i>Product ID: </i>@Html.TextBoxFor(m => m.ProductID) @Html.ValidationMessageFor(m => m.ProductID)
+            <br />
+            <i>Product name:</i>@Html.TextBoxFor(m => m.ProductName) @Html.ValidationMessageFor(m => m.ProductName)
+            <br />
+            <i>Product price:</i> @Html.TextBoxFor(m => m.Price) @Html.ValidationMessageFor(m => m.Price)
+            <br />
+            <i>Product image path (/Content/PRODUCT NAME.jpg):</i> @Html.TextBoxFor(m => m.Image) @Html.ValidationMessageFor(m => m.Image)
+            <br />
+            <i>Product quantity:</i> @Html.TextBoxFor(m => m.Quantity) @Html.ValidationMessageFor(m => m.Quantity)
+            <br />
+            <input id="Submit1" type="submit" value="Register" />
+            <br />
+        }
+    </div>
+</body>
+</html>

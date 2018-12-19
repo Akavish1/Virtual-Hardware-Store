@@ -1,0 +1,28 @@
+﻿@model Labs.Models.Customer
+
+
+@*lab 4 - another type of view*@
+@*Views the model's attributes to enter*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Customer</title>
+</head>
+<body>
+    <div>
+        <br />
+        <br />
+        <span style="color:coral">Welcome  @Model.firstname @Model.lastname</span>
+        <br />
+        Customer User Name: @Model.username
+        <br />
+        Customer Password: @Model.password
+        <br />
+        Customer Email: @Model.email
+        <br />
+        Customer Number: @Model.customernumber
+    </div>
+</body>
+</html>

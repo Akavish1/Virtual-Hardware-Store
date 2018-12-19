@@ -1,0 +1,74 @@
+﻿@model Labs.ModelView.ProductViewModel
+    @if (Session["Logged"] != null)
+    {
+        if (Session["Logged"].ToString().Equals("Admin"))
+        {
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+        }
+        if (Session["Logged"].ToString().Equals("Customer"))
+            {
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+            }
+    }
+
+@*displays 2018's best hardware at unrivaled prices (its actually a scam though, i have none of it)*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Products</title>
+</head>
+<body>
+    <div>
+        <br />
+        <br />
+        <style type="text/css">
+            table.gridtable {
+                font-family: verdana,arial,sans-serif;
+                font-size: 11px;
+                color: #0026ff;
+                border-width: 1px;
+                border-color: #666666;
+                border-collapse: collapse;
+            }
+
+                table.gridtable th {
+                    border-width: 1px;
+                    padding: 8px;
+                    border-style: solid;
+                    border-color: #666666;
+                    background-color: #dedede;
+                }
+
+                table.gridtable td {
+                    border-width: 1px;
+                    padding: 8px;
+                    border-style: solid;
+                    border-color: #666666;
+                    background-color: #ffffff;
+                }
+        </style>
+
+        <table width="100%" cellpadding="5" cellspacing="2" border="0" style="background-color: White;">
+            @foreach (var item in Model.products)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.Quantity Left</td>
+                    <td><text><img src="@item.Image" width="250px" height="200px"></img></text></td>
+                    <td>
+                        @using (Html.BeginForm("Purchase", "Home", FormMethod.Post))
+                        {
+                            <input type="hidden" name="item" value="@item.ProductID" />
+                            <input type="submit" value="Purchase" onclick="return confirm('Purchase @item.ProductName ?')" />
+                        }
+
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

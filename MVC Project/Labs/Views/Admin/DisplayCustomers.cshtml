@@ -1,0 +1,14 @@
+﻿@model Labs.ModelView.CustomerViewModel
+@using Labs.Models
+
+
+
+@*a partial view displaying the current customer table in the database*@
+<span style="color:darkred">Current Customers -</span>
+<br />
+
+@{
+    WebGrid obj = new WebGrid(Model.customers);
+}
+
+@obj.GetHtml()

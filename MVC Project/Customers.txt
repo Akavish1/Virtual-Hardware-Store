@@ -1,0 +1,37 @@
+customernumber
+firstname lastname
+username
+password
+email
+transactionid
+
+1234
+Dudu Zubu
+dudu1234
+123456
+duduzubu@somerandomemail.com
+123456
+
+1235
+Alon Shh
+alon1235
+123455
+alonshh@sfsfsdf.com
+
+1233
+Pita Lehem
+pita1212
+123123
+pitabelehem@gmail.com
+
+1266
+Bjorn Ironside
+s05e10
+thepiratebay
+notyet@gmail.com
+
+1010
+abcd efgh
+abcd
+abcde
+abcde@live.com

@@ -1,0 +1,51 @@
+﻿@model Labs.Models.Customer
+
+
+<!DOCTYPE html>
+@*LAB 4*@
+@*html-defined submit text entry buttons to submit information - interacts with the submit method*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Enter</title>
+</head>
+@*LAB 7*@
+@*jquery scripts to pass the validation (if possible) to the user's explorer*@
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<body>
+    Enter your details-
+    <br />
+    @if (Session["cDuplicateError"] != null)
+    {
+        <span style="color:orangered">@Session["cDuplicateError"];</span>
+    }
+    <div>
+        <br />
+        <br />
+        @using (Html.BeginForm("Submit", "Customer", FormMethod.Post))
+    {
+        @*LAB 7*@
+        @*validationsummary checks if the input passes validation*@
+        @*@model declaration at top tightly binds this view*@
+        @*value = assigns the input to the model*@
+        <i>First name: </i>@Html.TextBoxFor(m => m.firstname) @Html.ValidationMessageFor(m => m.firstname)
+        <br />
+        <i>Last name:</i>@Html.TextBoxFor(m => m.lastname) @Html.ValidationMessageFor(m => m.lastname)
+        <br />
+        <i>Customer number:</i> @Html.TextBoxFor(m => m.customernumber) @Html.ValidationMessageFor(m => m.customernumber)
+        <br />
+        <i>Customer user name:</i> @Html.TextBoxFor(m => m.username) @Html.ValidationMessageFor(m => m.username)
+        <br />
+        <i>Customer password:</i> @Html.PasswordFor(m => m.password) @Html.ValidationMessageFor(m => m.password)
+        <br />
+        <i>Customer email:</i> @Html.TextBoxFor(m => m.email) @Html.ValidationMessageFor(m => m.email)
+        <br />
+        <input id="Submit1" type="submit" value="Register" />
+        <br />
+}
+    </div>
+</body>
+</html>

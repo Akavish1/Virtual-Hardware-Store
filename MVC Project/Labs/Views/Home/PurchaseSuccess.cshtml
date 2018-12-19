@@ -1,0 +1,31 @@
+﻿@if (Session["Logged"] != null)
+{
+    if (Session["Logged"].ToString().Equals("Admin"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    if (Session["Logged"].ToString().Equals("Customer"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+}
+
+@*notifies the user that he successfully purchased the item*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PurchaseSuccess</title>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Congratsulations!</strong>
+        <br />
+        Successfully purchased @Session["Purchased"]!
+    </div>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>

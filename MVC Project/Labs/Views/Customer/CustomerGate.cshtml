@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!DOCTYPE html>
+
+@*the default page for a logged customer user*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CustomerGate</title>
+</head>
+<body>
+    Hello @Session["LoggedName"]
+    <br />
+    Search for a product or browse the catalog to make a purchase
+    <div>
+    </div>
+</body>
+</html>
